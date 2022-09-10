@@ -5,9 +5,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0 !important;;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.appointment_button:hover,.appointment_button:focus {
+  transform: scale(0.99);
+  background-color: gray!important;
+}
+.modal{
+  padding: 0!important;;
+}
+.appointmentList {
+  background: repeating-linear-gradient(gray 0px, gray 1px, white 1px, white 100px);
+  height: 2400px;
+  position: relative;
+}
+
+.calendar_div {
+  max-width: 500px;
+}
+.hourMarker{
+  position: absolute;
+  left: 50%; 
+  right: 50%; 
+  font-size: 18;
+}
+
