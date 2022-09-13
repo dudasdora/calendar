@@ -42,9 +42,12 @@ function AppointmentPopup(props: { top: number; height: number; appointment: any
     const url = createWeatherForecastUrl();
     axios.get(url).then((response) => {
       response.data.list.map((element: any) => {
+
         if (Math.abs(((props.appointment.start.getTime()) - new Date(element.dt_txt).getTime()) / (1000 * 3600)) < 2) {
           setCanMakeForecast(true);
-          setWeatherData(element);
+          setCelsius(element.main.temp);
+          setIconId(element.weather[0].icon);
+          setLocation(response.data.city.name);
         }
       }
       );
@@ -74,16 +77,13 @@ function AppointmentPopup(props: { top: number; height: number; appointment: any
 
     return url;
   }
-  function setWeatherData(weather: any) {
-    setCelsius(weather.main.temp);
-    setIconId(weather.weather[0].icon);
-    setLocation(weather.name);
-  }
   /* Get the current weather data, and set the necessary values. */
   function getCurrentWeather() {
     const url = createCurrentWeatherUrl();
-    axios.get(url).then((response2) => {
-      setWeatherData(response2.data);
+    axios.get(url).then((response) => {
+      setCelsius(response.data.main.temp);
+      setIconId(response.data.weather[0].icon);
+      setLocation(response.data.name);
     })
   };
   /* Get the users current location. */

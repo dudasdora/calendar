@@ -77,7 +77,6 @@ export function Calendar(apiKey: any) {
 
   /* After the page is loaded read the appointments. */
   useEffect(() => {
-    console.log(apiKey);
     addAppointments();
   },
     [],
@@ -99,7 +98,6 @@ export function Calendar(apiKey: any) {
       return;
     }
     filterAppointmentsByDate();
-    console.log(currentDate)
   }, [currentDate,apiKey]);
 
   return (
