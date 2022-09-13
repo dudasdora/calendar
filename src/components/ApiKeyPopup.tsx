@@ -24,31 +24,31 @@ function ApiKeyPopup({ apiKeyfromPopup }: any) {
 
   return (
 
-      <Modal show={true} onHide={handleSave} backdrop="static" shouldCloseOnEsc={
-        false}>
-        <Modal.Header >
-          <Modal.Title>{label}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Enter your API key here:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="775c2dfba155e62a08f835c21170d1b8"
-                value={apiValue}
-                onChange={e => setApiValue(e.target.value)}
-                autoFocus
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={handleSave}>
-            Save
-          </Button>
-        </Modal.Footer>
-      </Modal>
+    <Modal show={true} onHide={handleSave} backdrop="static" shouldCloseOnEsc={
+      false}>
+      <Modal.Header >
+        <Modal.Title>{label}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Enter your API key here:</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="775c2dfba155e62a08f835c21170d1b8"
+              value={apiValue}
+              onChange={e => setApiValue(e.target.value)}
+              autoFocus
+            />
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="primary" onClick={handleSave}>
+          Save
+        </Button>
+      </Modal.Footer>
+    </Modal>
   );
 }
 

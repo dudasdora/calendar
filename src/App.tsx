@@ -1,5 +1,5 @@
 import { Calendar } from './components/Calendar';
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import ApiKeyPopup from './components/ApiKeyPopup';
 
 function App() {
@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div>
-      {/* If you haven't gave the API key show the ApiKeyPopup, otherwise the Calendar */}
       {(apiKey === "") ?
         (<ApiKeyPopup apiKeyfromPopup={apiKeyfromPopup} />) :
         (<Calendar apiKey={apiKey} />

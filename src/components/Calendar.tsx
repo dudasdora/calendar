@@ -17,7 +17,7 @@ export function Calendar(apiKey: any) {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   /* Current dates appointments */
   const [currentDateAppointments, setCurrentDateAppointments] = useState<Appointment[]>([]);
-  
+
   const isFirstRender = useRef(true);
 
   /* Change the current date withs days by the difference value. */
@@ -60,8 +60,8 @@ export function Calendar(apiKey: any) {
   /* Filter the appointments by the current date of date picker, store them in another list. */
   function filterAppointmentsByDate() {
     const filterAppointments = appointments.filter(appointment => areTheSameDay(appointment.start, currentDate) ||
-      areTheSameDay(appointment.end, currentDate));    
-      
+      areTheSameDay(appointment.end, currentDate));
+
     return setCurrentDateAppointments(filterAppointments);
 
   }
@@ -98,7 +98,7 @@ export function Calendar(apiKey: any) {
       return;
     }
     filterAppointmentsByDate();
-  }, [currentDate,apiKey]);
+  }, [currentDate, apiKey]);
 
   return (
     <Stack className="calendar_div mx-auto" >
@@ -112,7 +112,7 @@ export function Calendar(apiKey: any) {
         {[...Array(23)].map((x, i) =>
           <div className="hourMarker" style={{ top: i * 100 + 100, color: "gray", }} >{i + 1}</div>
         )}
-        {currentDateAppointments.map((d,i) =><div> <AppointmentElement key={d.id} value={d} currentDay={currentDate} /></div>
+        {currentDateAppointments.map((d, i) => <div> <AppointmentElement key={d.id} value={d} currentDay={currentDate} /></div>
         )}
       </div>
     </Stack>

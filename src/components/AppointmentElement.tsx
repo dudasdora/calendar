@@ -1,4 +1,4 @@
-import React, { useState ,useEffect,useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Appointment } from './Appointment'
 import AppointmentPopup from './AppointmentPopup'
 
@@ -15,7 +15,7 @@ export function AppointmentElement(props: { value: Appointment, currentDay: Date
 
   /* Check if the two date parameters are the same day. */
   function areTheSameDay(date1: Date, date2: Date) {
-    
+
     if (date1.getFullYear() === date2.getFullYear() &&
       date1.getMonth() === date2.getMonth() &&
       date1.getDate() === date2.getDate()) {
@@ -41,11 +41,11 @@ export function AppointmentElement(props: { value: Appointment, currentDay: Date
   useEffect(() => {
     setTop(calculateTop());
     setHeight(calculateHeight());
-  }, [appointment,currentDay]);
+  }, [appointment, currentDay]);
 
   return (
     <div>
-        <AppointmentPopup top={top} height={height} appointment={appointment} />
+      <AppointmentPopup top={top} height={height} appointment={appointment} />
     </div>
   );
 

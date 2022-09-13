@@ -36,7 +36,7 @@ function AppointmentPopup(props: { top: number; height: number; appointment: any
   const fontSize: number = 16;
   const buttonPadding: number = 6;
   const titleMaxHeight = props.height - (buttonPadding * 2);
-  
+
   /* Get the response of the forecast quest, and set the necessary values.if there are some forecast what are maximum two hours away from the apoointments start, it set the canMakeForeCast value to true.*/
   function MakeForecast() {
     const url = createWeatherForecastUrl();
@@ -111,21 +111,21 @@ function AppointmentPopup(props: { top: number; height: number; appointment: any
 
   return (
     <>
-      <Button onFocus={(e: any) => (e.target.blur())} 
-        className="appointment_button" 
+      <Button onFocus={(e: any) => (e.target.blur())}
+        className="appointment_button"
         style={{
-        transition: "all 500ms",
-        border: "1px solid white",
-        backgroundColor: Colors[props.appointment.color as keyof typeof Colors],
-        position: "absolute",
-        top: props.top,
-        width: '100%',
-        height: props.height
-      }} 
+          transition: "all 500ms",
+          border: "1px solid white",
+          backgroundColor: Colors[props.appointment.color as keyof typeof Colors],
+          position: "absolute",
+          top: props.top,
+          width: '100%',
+          height: props.height
+        }}
         variant="primary" onClick={() => openPopup()}>
         {(
           (fontSize <= titleMaxHeight) ?
-            (<span style={{ fontSize:fontSize,fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", display: "block" }}>{props.appointment.title}</span>) :
+            (<span style={{ fontSize: fontSize, fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", display: "block" }}>{props.appointment.title}</span>) :
             (null)
         )}
 

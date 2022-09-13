@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 !important;;
+  padding: 0 !important;
+  ;
 }
 
 code {
@@ -13,12 +14,16 @@ code {
     monospace;
 }
 
-.appointment_button:hover,.appointment_button:focus {
+.appointment_button:hover,
+.appointment_button:focus {
   transform: scale(0.99);
 }
-.modal{
-  padding: 0!important;;
+
+.modal {
+  padding: 0 !important;
+  ;
 }
+
 .appointmentList {
   background: repeating-linear-gradient(gray 0px, gray 1px, white 1px, white 100px);
   height: 2400px;
@@ -28,10 +33,10 @@ code {
 .calendar_div {
   max-width: 500px;
 }
-.hourMarker{
+
+.hourMarker {
   position: absolute;
-  left: 50%; 
-  right: 50%; 
+  left: 50%;
+  right: 50%;
   font-size: 18;
 }
-
