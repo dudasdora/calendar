@@ -35,7 +35,7 @@ function ApiKeyPopup({ apiKeyfromPopup }: any) {
             <Form.Label>Enter your API key here:</Form.Label>
             <Form.Control
               type="text"
-              placeholder="775c2dfba155e62a08f835c21170d1b8"
+              placeholder="your API key"
               value={apiValue}
               onChange={e => setApiValue(e.target.value)}
               autoFocus
